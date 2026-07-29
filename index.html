@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Box Story - Collect Moments, Create Your Story</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#F5EFE6',      /* สีพื้นหลังครีมอุ่น */
+                            card: '#E8DFD8',    /* สีการ์ดอ่อน */
+                            brown: '#5C3D2E',   /* น้ำตาลเข้ม */
+                            accent: '#826754',  /* น้ำตาลอบอุ่น */
+                            green: '#6E8569'    /* เขียวสไตล์ต้นไม้ */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F5EFE6;
+            color: #5C3D2E;
+        }
+        /* ซ่อน Scrollbar สำหรับเบราว์เซอร์ต่างๆ แต่ยังเลื่อนได้ */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-[#F5EFE6]/90 backdrop-blur-md border-b border-brand-accent/20 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-wide text-brand-brown flex items-center gap-2">
+                <i class="fa-solid fa-cube text-brand-green"></i> The Box Story
+            </a>
+
+            <!-- Menu Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-brand-green transition">หน้าแรก</a>
+                <a href="#about us" class="hover:text-brand-green transition">เกี่ยวกับเรา</a>
+                <a href="#categories" class="hover:text-brand-green transition">ธีมกล่องความทรงจำ</a>
+                <a href="#contact" class="hover:text-brand-green transition">ติดต่อเรา</a>
+            </div>
+
+            <!-- Cart & CTA -->
+            <div class="flex items-center gap-4">
+                <button class="relative p-2 text-brand-brown hover:text-brand-green transition">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span class="absolute -top-1 -right-1 bg-brand-green text-white text-xs px-1.5 py-0.5 rounded-full">1</span>
+                </button>
+                <a href="#order" class="bg-brand-brown text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-brand-accent transition shadow-sm">
+                    สั่งทำกล่องของคุณ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Text Content -->
+        <div class="space-y-6">
+            <div class="inline-block bg-brand-card text-brand-brown px-4 py-1.5 rounded-full text-sm font-medium">
+                ✨ Your story — Our box 🌱
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-brand-brown leading-tight">
+                The <br><span class="text-brand-green">Box story</span>
+            </h1>
+            <p class="text-lg md:text-xl text-brand-accent font-light">
+                • Collect Moments, Create Your Story •
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+                เปลี่ยนเรื่องราวและความทรงจำสุดพิเศษของคุณให้กลายเป็นกล่องจำลองสามมิติสุดน่ารักประณีต ออกแบบเฉพาะคุณเพื่อเป็นของขวัญชิ้นเดียวในโลก
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="#categories" class="bg-brand-brown text-white px-8 py-3.5 rounded-full font-medium hover:bg-brand-accent transition shadow-md">
+                    ดูแบบทั้งหมด
+                </a>
+                <a href="#custom" class="border border-brand-brown text-brand-brown px-8 py-3.5 rounded-full font-medium hover:bg-brand-card transition">
+                    สอบถามงาน Custom
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Product Preview Box -->
+        <div class="relative flex justify-center">
+            <div class="w-full max-w-md bg-white p-4 rounded-3xl shadow-xl border border-brand-card">
+                <div class="relative rounded-2xl overflow-hidden aspect-square bg-[#EAE2D6] flex items-center justify-center">
+                    <img src="https://raw.githubusercontent.com/theboxstoryth-website/The-Box-Story/main/The%20Box%203D%202.jpg" alt="The Box 3D" class="object-cover w-full h-full hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about us" class="bg-white/80 py-16 md:py-24 border-t border-brand-accent/10">
+        <div class="max-w-4xl mx-auto px-6 space-y-12">
+            <!-- Section Title -->
+            <div class="text-center space-y-3">
+                <div class="inline-block bg-brand-card/60 text-brand-brown px-4 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
+                    Our Story
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-brown">เรื่องราวความเป็นมา</h2>
+                <p class="text-brand-accent italic font-light text-lg">"เพราะทุกช่วงเวลา มีเรื่องราวที่ควรค่าแก่การเก็บไว้"</p>
+            </div>
+
+            <!-- Content Body -->
+            <div class="space-y-8 text-gray-700 leading-relaxed font-normal">
+                <div class="bg-[#F5EFE6]/50 p-6 md:p-8 rounded-3xl border border-brand-card space-y-4">
+                    <h3 class="text-xl font-bold text-brand-brown flex items-center gap-2">
+                        <i class="fa-solid fa-sparkles text-brand-green"></i>
+                        จุดเริ่มต้นจาก "ช่วงเวลาพิเศษ" สู่ "กล่องความทรงจำสามมิติ"
+                    </h3>
+                    <p>เคยไหม... กับการได้รับของขวัญในโอกาสสำคัญ แต่เมื่อเวลาผ่านไป ของขวัญชิ้นนั้นกลับถูกเก็บไว้จนลืมเลือน ดอกไม้บางช่อเหี่ยวแห้งไปตามกาลเวลา จนแทบจำไม่ได้ด้วยซ้ำว่าเคยบันทึกความทรงจำในวันไหนไว้บ้าง?</p>
+                    <p><strong class="text-brand-brown">The Box Story</strong> เริ่มต้นขึ้นจากความรักในงานคราฟต์อันประณีต และความตั้งใจที่จะ <span class="bg-brand-card/70 px-2 py-0.5 rounded text-brand-brown font-medium">"เปลี่ยนความทรงจำล้ำค่า ให้กลายเป็นสิ่งที่มองเห็นและสัมผัสได้ในทุกๆ วัน"</span> เพื่อคอยเติมเต็มแรงบันดาลใจและสร้างรอยยิ้มเล็กๆ ให้ชีวิตทุกครั้งที่ได้จ้องมอง</p>
+                    <p>เราหลงใหลในเสน่ห์ของงานแบบจำลองจิ๋ว <em>(Miniature Diorama)</em> และเชื่ออย่างหมดหัวใจว่า <em>ของขวัญที่มีคุณค่าที่สุด ไม่ใช่ของที่มีราคาแพงที่สุด แต่คือของขวัญที่เล่าเรื่องราวของผู้รับได้ดีที่สุด</em></p>
+                    <p class="pt-2">จุดเริ่มต้นเล็กๆ เกิดขึ้นจากกล่องความทรงจำสามมิติชิ้นแรก ที่ถูกตั้งใจประดิดประดอยขึ้นเพื่อเป็นของขวัญวันสำเร็จการศึกษาให้แก่ "ว่าที่นักพฤกษศาสตร์คนพิเศษ" กล่องใบนั้นได้ย่อส่วนโลกแห่งความสุข รวบรวมทั้งต้นไม้ต้นโปรด และเจ้าโฮ่งแสนรักในวันสำคัญเอาไว้ด้วยกัน ความรื่นรมย์ น้ำตาแห่งความซาบซึ้ง และความสุขสุดหัวใจในวันนั้น ได้กลายมาเป็นแรงขับเคลื่อนสำคัญในการก่อตั้ง <strong>The Box Story</strong> ขึ้นมาอย่างเป็นทางการ</p>
+                </div>
+
+                <div class="space-y-4 pt-4">
+                    <h3 class="text-2xl font-bold text-center text-brand-green">Collect Moments, Create Your Story</h3>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto">เพราะเราเชื่อว่า ชีวิตของทุกคนถูกถักทอขึ้นจาก "โมเมนต์เล็กๆ" ที่มีความหมายอันยิ่งใหญ่</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 pt-4">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-card flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bg flex items-center justify-center text-brand-green text-lg shrink-0">
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-brown">Plant Lover</h4>
+                                <p class="text-xs text-gray-500 mt-1">มุมโปรดของคนรักต้นไม้ พื้นที่สีเขียวสำหรับชาวคอนโด ที่เลี้ยงต้นไม้อะไรก็ไม่โตสักที</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-card flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bg flex items-center justify-center text-sky-400 text-lg shrink-0">
+                                <i class="fa-solid fa-cake-candles"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-brown">Birthday capture</h4>
+                                <p class="text-xs text-gray-500 mt-1">ความทรงจำสุดพิเศษในวันเกิด ที่มีแค่ปีละครั้ง</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-card flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bg flex items-center justify-center text-orange-400 text-lg shrink-0">
+                                <i class="fa-solid fa-paw"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-brown">Pet Memory</h4>
+                                <p class="text-xs text-gray-500 mt-1">รอยยิ้ม เสียงหัวเราะ และพื้นที่แห่งความสุขของสมาชิกสี่ขาในครอบครัว</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-card flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bg flex items-center justify-center text-rose-400 text-lg shrink-0">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-brown">Couple Memory</h4>
+                                <p class="text-xs text-gray-500 mt-1">บันทึกบทใหม่ของความรัก เส้นทางคู่ชีวิต และความทรงจำที่มีแค่เราสองคน</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-card flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bg flex items-center justify-center text-yellow-400 text-lg shrink-0">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-brown">Hobby Space</h4>
+                                <p class="text-xs text-gray-500 mt-1">มุมเซฟโซนเล็กๆ ที่ได้เป็นตัวของตัวเองอย่างเต็มที่และสบายใจที่สุด</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-card flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bg flex items-center justify-center text-amber-700 text-lg shrink-0">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-brown">Little Achievement</h4>
+                                <p class="text-xs text-gray-500 mt-1">ความภาคภูมิใจ หมุดหมายแห่งความสำเร็จ และเส้นทางความฝันในอาชีพ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center bg-brand-card/40 p-6 rounded-2xl border border-brand-accent/20">
+                    <p class="text-brand-brown font-medium">
+                        งานทุกชิ้นของ <strong>The Box Story</strong> จึงไม่ใช่เพียงงานโมเดลจำลองทั่วไป แต่เป็น <span class="text-brand-green font-bold">"งานทำมือชิ้นเดียวในโลก (Custom-made)"</span> ที่ใส่ใจในทุกรายละเอียด ทุกองค์ประกอบ เพื่อให้ทุกคนที่ได้เปิดกล่องใบนี้ รู้สึกเหมือนได้หมุนเข็มนาฬิกากลับไปสัมผัสไออุ่นแห่งความสุขในวันนั้นอีกครั้ง 🌱✨
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories / Themes Section -->
+    <section id="categories" class="bg-white/60 py-16 border-y border-brand-accent/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-brand-brown mb-3">The Box Theme</h2>
+                <p class="text-gray-600">เรามีตัวอย่างหลากหลายธีมให้เลือก (คลิกที่ธีมเพื่อดูแบบสินค้า)</p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- 1. Plant Lover -->
+                <div onclick="openThemeModal('plant')" class="bg-[#F5EFE6] p-6 rounded-2xl text-center hover:shadow-lg hover:-translate-y-1 transition duration-300 border border-transparent hover:border-brand-green/30 cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center text-brand-green text-2xl shadow-sm">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-brown mb-1">Plant Lover</h3>
+                    <p class="text-xs text-gray-500">คนรักต้นไม้</p>
+                </div>
+
+                <!-- 2. Birthday capture -->
+                <div onclick="openThemeModal('birthday')" class="bg-[#F5EFE6] p-6 rounded-2xl text-center hover:shadow-lg hover:-translate-y-1 transition duration-300 border border-transparent hover:border-brand-green/30 cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center text-sky-400 text-2xl shadow-sm">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-brown mb-1">Birthday capture</h3>
+                    <p class="text-xs text-gray-500">โมเมนต์วันเกิด</p>
+                </div>
+
+                <!-- 3. Pet Memory -->
+                <div onclick="openThemeModal('pet')" class="bg-[#F5EFE6] p-6 rounded-2xl text-center hover:shadow-lg hover:-translate-y-1 transition duration-300 border border-transparent hover:border-brand-green/30 cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center text-orange-400 text-2xl shadow-sm">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-brown mb-1">Pet Memory</h3>
+                    <p class="text-xs text-gray-500">สัตว์เลี้ยงแสนรัก</p>
+                </div>
+
+                <!-- 4. Couple Memory -->
+                <div onclick="openThemeModal('couple')" class="bg-[#F5EFE6] p-6 rounded-2xl text-center hover:shadow-lg hover:-translate-y-1 transition duration-300 border border-transparent hover:border-brand-green/30 cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center text-rose-400 text-2xl shadow-sm">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-brown mb-1">Couple Memory</h3>
+                    <p class="text-xs text-gray-500">บันทึกรักสองเรา</p>
+                </div>
+
+                <!-- 5. Hobby Space -->
+                <div onclick="openThemeModal('hobby')" class="bg-[#F5EFE6] p-6 rounded-2xl text-center hover:shadow-lg hover:-translate-y-1 transition duration-300 border border-transparent hover:border-brand-green/30 cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center text-yellow-400 text-2xl shadow-sm">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-brown mb-1">Hobby Space</h3>
+                    <p class="text-xs text-gray-500">งานอดิเรกสุดชิลล์</p>
+                </div>
+
+                <!-- 6. Little Achievement -->
+                <div onclick="openThemeModal('career')" class="bg-[#F5EFE6] p-6 rounded-2xl text-center hover:shadow-lg hover:-translate-y-1 transition duration-300 border border-transparent hover:border-brand-green/30 cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center text-amber-700 text-2xl shadow-sm">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-brown mb-1">Little Achievement</h3>
+                    <p class="text-xs text-gray-500">ความฝันและความสำเร็จ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal สำหรับโชว์สินค้าในธีมที่เลือก -->
+    <div id="themeModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity">
+        <div class="bg-[#F5EFE6] w-full max-w-5xl rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
+            
+            <!-- Modal Header -->
+            <div class="bg-white px-6 py-4 border-b border-brand-card flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div id="modalIcon" class="w-10 h-10 rounded-full bg-brand-bg flex items-center justify-center text-xl"></div>
+                    <div>
+                        <h3 id="modalTitle" class="text-xl font-bold text-brand-brown"></h3>
+                        <p id="modalDesc" class="text-xs text-gray-500"></p>
+                    </div>
+                </div>
+                <button onclick="closeThemeModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Slider Area) -->
+            <div class="p-6 md:p-8 relative flex-1 flex items-center justify-center overflow-hidden">
+                <!-- ปุ่มเลื่อนซ้าย -->
+                <button onclick="slideNext(-1)" class="absolute left-3 md:left-6 z-10 w-12 h-12 rounded-full bg-white/95 text-brand-brown shadow-xl flex items-center justify-center hover:bg-brand-brown hover:text-white transition border border-brand-card text-lg">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- รายการสินค้า (ใช้ Scroll Snap ล็อกตำแหน่งภาพแบบเต็มๆ พอดีเป๊ะ) -->
+                <div id="modalProductsGrid" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar py-3 px-4 md:px-12 snap-x snap-mandatory items-center">
+                    <!-- สินค้าจะถูก Render ด้วย JavaScript ตรงนี้ -->
+                </div>
+
+                <!-- ปุ่มเลื่อนขวา -->
+                <button onclick="slideNext(1)" class="absolute right-3 md:right-6 z-10 w-12 h-12 rounded-full bg-white/95 text-brand-brown shadow-xl flex items-center justify-center hover:bg-brand-brown hover:text-white transition border border-brand-card text-lg">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-white px-6 py-4 border-t border-brand-card flex justify-between items-center text-xs text-gray-500">
+                <span>👈 เลื่อนซ้าย-ขวา เพื่อดูแบบสินค้าทีละภาพ</span>
+                <button onclick="closeThemeModal()" class="bg-brand-brown text-white px-5 py-2 rounded-full hover:bg-brand-accent transition">
+                    ปิดหน้าต่าง
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-brown text-[#F5EFE6] py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <h3 class="text-xl font-bold">The Box Story</h3>
+                <p class="text-sm text-gray-300 mt-1">• Collect Moments, Create Your Story •</p>
+            </div>
+            <div class="flex space-x-6 text-xl">
+                <a href="#" class="hover:text-brand-card transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-card transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-card transition"><i class="fa-brands fa-line"></i></a>
+            </div>
+            <p class="text-xs text-gray-400">© 2026 The Box Story. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript สำหรับระบบเลื่อนทีละภาพแบบสมบูรณ์ -->
+    <script>
+        const themeData = {
+            plant: {
+                title: "Plant Lover Box",
+                desc: "กล่องย่อส่วนมุมสวนและต้นไม้ต้นโปรด",
+                icon: '<i class="fa-solid fa-seedling text-brand-green"></i>',
+                products: [
+                    { name: "Botanical Dream", price: "1,890 บาท", img: "https://raw.githubusercontent.com/theboxstoryth-website/The-Box-Story/main/Plant%20lover%201.jpg" },
+		    { name: "Blooming Garden Home", price: "1,890 บาท", img: "https://raw.githubusercontent.com/theboxstoryth-website/The-Box-Story/main/Plant%20lover%202.jpg" },
+                    { name: "Cactus Corner", price: "1,890 บาท", img: "https://raw.githubusercontent.com/theboxstoryth-website/The-Box-Story/main/Plant_lover_3.jpg" },
+                    { name: "Tropical Red Park", price: "1,890 บาท", img: "https://raw.githubusercontent.com/theboxstoryth-website/The-Box-Story/main/Plant%20lover%204.jpg" },
+                ]
+            },
+            birthday: {
+                title: "Birthday Capture Box",
+                desc: "บันทึกความทรงจำเฉลิมฉลองวันเกิดสุดประทับใจ",
+                icon: '<i class="fa-solid fa-cake-candles text-sky-400"></i>',
+                products: [
+                    { name: "Sweet Birthday Party Box", price: "1,390 บาท", img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Balloon & Cake Surprise", price: "1,190 บาท", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Cozy Birthday Room", price: "1,290 บาท", img: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Candle Light Celebration", price: "1,450 บาท", img: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Gift & Party Table", price: "1,250 บาท", img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop&q=60" }
+                ]
+            },
+            pet: {
+                title: "Pet Memory Box",
+                desc: "พื้นที่ความสุขของน้องหมาน้องแมวและสัตว์เลี้ยงแสนรัก",
+                icon: '<i class="fa-solid fa-paw text-orange-400"></i>',
+                products: [
+                    { name: "Cat Cafe & Playroom", price: "1,390 บาท", img: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Happy Dog Yard Box", price: "1,290 บาท", img: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Pet Cozy Corner", price: "1,190 บาท", img: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Little Hamster House", price: "1,090 บาท", img: "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Puppy Birthday Party", price: "1,350 บาท", img: "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?w=500&auto=format&fit=crop&q=60" }
+                ]
+            },
+            couple: {
+                title: "Couple Memory Box",
+                desc: "บันทึกเรื่องราวความรัก วันครบรอบ และความทรงจำสองเรา",
+                icon: '<i class="fa-solid fa-heart text-rose-400"></i>',
+                products: [
+                    { name: "Romantic Picnic Box", price: "1,490 บาท", img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500&auto=format&fit=crop&q=60" },
+                    { name: "First Date Cafe Box", price: "1,390 บาท", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Anniversary Memory Room", price: "1,590 บาท", img: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Stargazing Tent Box", price: "1,690 บาท", img: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Beach Trip Memory", price: "1,450 บาท", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60" }
+                ]
+            },
+            hobby: {
+                title: "Hobby Space Box",
+                desc: "มุมเซฟโซนสุดโปรด งานอดิเรก และกิจกรรมฮีลใจ",
+                icon: '<i class="fa-solid fa-house-chimney text-yellow-400"></i>',
+                products: [
+                    { name: "Cozy Book & Coffee Nook", price: "1,290 บาท", img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Art Studio & Canvas", price: "1,390 บาท", img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Gamer & Music Room", price: "1,490 บาท", img: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Handmade Crafts Corner", price: "1,250 บาท", img: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Baking & Kitchen Studio", price: "1,390 บาท", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&auto=format&fit=crop&q=60" }
+                ]
+            },
+            career: {
+                title: "Little Achievement Box",
+                desc: "กล่องแห่งความภาคภูมิใจ และก้าวสำคัญในสายอาชีพ",
+                icon: '<i class="fa-solid fa-briefcase text-amber-700"></i>',
+                products: [
+                    { name: "Graduation Memory Box", price: "1,390 บาท", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Doctor & Clinic Studio", price: "1,490 บาท", img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Chef Kitchen Box", price: "1,390 บาท", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Architect Office Box", price: "1,590 บาท", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&auto=format&fit=crop&q=60" },
+                    { name: "Artist Studio Box", price: "1,350 บาท", img: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=500&auto=format&fit=crop&q=60" }
+                ]
+            }
+        };
+
+        // ฟังก์ชั่นเปิด Modal
+        function openThemeModal(key) {
+            const data = themeData[key];
+            if (!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('modalIcon').innerHTML = data.icon;
+
+            const grid = document.getElementById('modalProductsGrid');
+            grid.innerHTML = '';
+
+            // Render การ์ดสินค้าขนาดใหญ่กำลังดี พร้อมใส่ class สำหรับล็อกตำแหน่ง snap-center
+            data.products.forEach(p => {
+                grid.innerHTML += `
+                    <div class="product-card w-[280px] md:w-[320px] bg-white rounded-3xl overflow-hidden border border-brand-card hover:shadow-lg transition snap-center snap-always flex-shrink-0">
+                        <div class="aspect-square bg-gray-100 overflow-hidden">
+                            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-4 md:p-5 space-y-3">
+                            <h4 class="font-bold text-brand-brown text-sm md:text-base truncate">${p.name}</h4>
+                            <div class="flex justify-between items-center">
+                                <span class="text-brand-green font-bold text-sm md:text-base">${p.price}</span>
+                                <button class="bg-brand-bg hover:bg-brand-card text-brand-brown px-3.5 py-2 rounded-xl text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
+                                    <i class="fa-solid fa-cart-plus"></i> สั่งทำ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('themeModal').classList.remove('hidden');
+            grid.scrollLeft = 0; // รีเซ็ตตำแหน่งกลับมาภาพแรก
+        }
+
+        // ฟังก์ชั่นเลื่อนทีละภาพอย่างแม่นยำ ไม่ตัดกลางภาพ
+        function slideNext(direction) {
+            const slider = document.getElementById('modalProductsGrid');
+            const cards = slider.querySelectorAll('.product-card');
+            if (cards.length === 0) return;
+
+            // คำนวณความกว้างของการ์ดรวมระยะห่าง (gap 24px)
+            const cardWidth = cards[0].offsetWidth + 24;
+            
+            // หาอินเด็กซ์ของการ์ดที่อยู่ใกล้ตำแหน่งเลื่อนปัจจุบันมากที่สุด
+            let currentIndex = Math.round(slider.scrollLeft / cardWidth);
+            
+            // กำหนดเป้าหมายการเลื่อนไปภาพถัดไปหรือก่อนหน้า
+            let targetIndex = currentIndex + direction;
+
+            // ป้องกันไม่ให้เลยขอบซ้ายสุดหรือขวาสุด
+            if (targetIndex < 0) targetIndex = 0;
+            if (targetIndex >= cards.length) targetIndex = cards.length - 1;
+
+            // สั่งเลื่อนไปยังตำแหน่งของการ์ดนั้นๆ แบบเป๊ะๆ ตรงกลาง
+            slider.scrollTo({
+                left: targetIndex * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+
+        // ฟังก์ชั่นปิด Modal
+        function closeThemeModal() {
+            document.getElementById('themeModal').classList.add('hidden');
+        }
+
+        // ปิด modal เมื่อกดพื้นที่สีดำด้านนอก
+        document.getElementById('themeModal').addEventListener('click', function(e) {
+            if (e.target === this) closeThemeModal();
+        });
+    </script>
+</body>
+</html>
